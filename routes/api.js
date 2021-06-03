@@ -37,7 +37,30 @@ router.get("/api/workouts/range", (req, res) => {
 });
 
 //Put
+router.put("/api/workouts/:id", ({body, params}, res) => {
+  Workout.findByIdAndUpdate(params.id, { $push: { exercises: body }}, { new: true, runValidators: true })
+
+  .then(dbWorkout => {
+    res.json(dbWorkout);
+  })
+  .catch(err => {
+    res.json(err);
+  });
+});
 
 //Post
+router.post("/api/workouts", ({ body }, res) => {
+
+  // const workout = new Workout(body);
+
+  Workout.create(body)
+    // .then(({_id}) => Workout.findOneAndUpdate({}, { $push: { exercises: _id } }))
+    .then(dbWorkout => {
+      res.json(dbWorkout);
+    })
+    .catch(err => {
+      res.json(err);
+    });
+});
 
 module.exports = router;
