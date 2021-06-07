@@ -44,7 +44,7 @@ As a user, I want to be able to view create and track daily workouts. I want to 
 
 ## Links
  
-  * Heroku Deployed demo link: ()
+  * Heroku Deployed demo link: (https://aqueous-hamlet-70364.herokuapp.com/)
   * Github Repository URL: (https://github.com/CliffordMorin/Fitness-Workout-Tracker)
 
 ## Technologies Used
